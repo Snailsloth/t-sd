@@ -1,2 +1,2 @@
 # t-sd
-#learning js, tshirt design tool fast prototyping
+#fabric js\uikit, tshirt design tool fast prototyping
