@@ -12,6 +12,23 @@
     min-width:480px;
 }
 
+.flip-switchers{
+    font-size: 12px;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border:1px solid #666;
+    background-color: rgba(255, 255, 255, 0.493);
+    cursor: pointer;
+}
+
+.color-square{
+    display: block;
+    margin: 0 10px;
+    width:10px;
+    height:10px;
+    border:1px solid #000;
+}
+
 .border{
     border:2px solid rgba(136, 185, 204, 0.459);
     border-radius: .4rem;

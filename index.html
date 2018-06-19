@@ -70,12 +70,12 @@
 
 
                 <div class="uk-width-1-1 uk-width-1-2@m ">
-                    <div class="border uk-padding-small uk-text-center canvas-wrapper">
-                            <div class="uk-width-1-5">
-                                <a href="#" onclick="flipToFront();">front</a>
-                                <a href="#" onclick="flipToBack();">back</a>
+                    <div class="border uk-padding-small uk-text-center canvas-wrapper uk-position-relative">
+                            <div class="uk-position-absolute uk-position-top-left uk-padding-small">
+                                <span class="flip-switchers" onclick="flipToFront();">front</span>
+                                <span class="flip-switchers" onclick="flipToBack();">back</span>
                             </div>
-                            <div class="uk-width-4-5">
+                            <div class="uk-width-1-1">
                                     <canvas id="c" width="480" height="510"></canvas>
                             </div>
                             <div class="uk-width-1-1">
@@ -115,14 +115,30 @@
                                         </div>
                                 
                                         <div class="uk-margin">
-                                                <label class="uk-form-label" for="shirt-size">Размер (анонимно!) </label>
+                                            <label class="uk-form-label" for="shirt-size">Размер (анонимно!) </label>
+                                            <div class="uk-form-controls">
+                                                <select class="uk-select" id="shirt-size">
+                                                    <option>XXXXXL</option>
+                                                    <option>LLLLLX</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="shirt-color">Цвет</label>
                                                 <div class="uk-form-controls">
-                                                    <select class="uk-select" id="shirt-size">
-                                                        <option>XXXXXL</option>
-                                                        <option>LLLLLX</option>
+                                                    <select class="uk-select" id="shirt-color" onchange="colorChange(this.value)">
+                                                            <option value="white" selected="selected">white</option>
+                                                            <option value="green">green</option>
+                                                            <option value="navy">navy</option>
+                                                            <option value="purple">purple</option>
+                                                            <option value="red">red</option>
+                                                            <option value="royal">royal</option>
                                                     </select>
                                                 </div>
                                             </div>
+
+                                        
                                 
                                         <div class="uk-margin">
                                             <textarea class="uk-textarea" rows="5" placeholder="Что ещё мы должны знать?"></textarea>
