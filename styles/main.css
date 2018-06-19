@@ -8,6 +8,10 @@
     overflow: visible;
 }
 
+.canvas-wrapper,#c{
+    min-width:480px;
+}
+
 .border{
     border:2px solid rgba(136, 185, 204, 0.459);
     border-radius: .4rem;

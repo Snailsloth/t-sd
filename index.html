@@ -9,43 +9,150 @@
     <link rel="stylesheet" href="styles/fonts.css" type="text/css" charset="utf-8" />
     <script src="js/uikit.min.js"></script>
     <script src="js/fabric.min.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
     <div class="uk-container uk-container-large">
             <h1 class="uk-heading-line uk-margin-top uk-text-center uk-margin-large-bottom">
                 <span class="rin">
-                    <span style="font-size:1.5rem">Make</span>
+                    <span style="font-size:1.4rem">Make</span>
                     <br>
                     <span style="font-size:1.9rem">your</span>
                     <br>
-                    <span style="font-size:2rem">t-shirt</span>
+                    <span style="font-size:2.3rem">t-shirt</span>
+                    <br>
+                    <span style="font-size:2.8rem">BY O L E J E ' NKA</span>
                 </span>
             </h1>
 
             <div uk-grid class="uk-width-1-1 uk-grid-match">
                 <div class="uk-width-1-1 uk-width-1-4@m ">
                     <div class="border uk-padding-small">
-                        <p>images/text</p>
+                        <ul uk-tab>
+                                <li><a href="#">Изображения</a></li>
+                                <li><a href="#">Умная надпись</a></li>
+                            </ul>
+                            
+                            <ul class="uk-switcher uk-margin">
+                                <li>
+                                    <div>
+                                        <p>Превьюшки имеющихся изображений</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <p>Навреное 3 инпута где то для текста</p>
+                                    </div>
+                                </li>
+                        </ul>
                     </div> 
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="uk-width-1-1 uk-width-1-2@m ">
-                    <div class="border uk-padding-small uk-text-center">
-                            <canvas id="c" width="480" height="510"></canvas>
-                            
-                            
+                    <div class="border uk-padding-small uk-text-center canvas-wrapper">
+                            <div class="uk-width-1-5">
+                                <a href="#" onclick="flipToFront();">front</a>
+                                <a href="#" onclick="flipToBack();">back</a>
+                            </div>
+                            <div class="uk-width-4-5">
+                                    <canvas id="c" width="480" height="510"></canvas>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <input class="uk-button uk-button-default uk-margin-top" type="file" id="imgLoader" accept="image/*">
+                            </div>
+
                     </div> 
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="uk-width-1-1 uk-width-1-4@m ">
                     <div class="border uk-padding-small">
-                        <p>inputs</p>
+                            <form>
+                                    <fieldset class="uk-fieldset">
+                                
+                                        <legend class="uk-legend">Заполни!</legend>
+                                
+                                        <div class="uk-margin">
+                                            <input class="uk-input" type="text" placeholder="Как зовут?">
+                                        </div>
+                                        <div class="uk-margin">
+                                            <input class="uk-input" type="text" placeholder="Почта?">
+                                        </div>
+                                
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="shirt-size">Размер (анонимно!) </label>
+                                                <div class="uk-form-controls">
+                                                    <select class="uk-select" id="shirt-size">
+                                                        <option>XXXXXL</option>
+                                                        <option>LLLLLX</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                
+                                        <div class="uk-margin">
+                                            <textarea class="uk-textarea" rows="5" placeholder="Что ещё мы должны знать?"></textarea>
+                                        </div>
+                                        
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="shirt-material">Материал:</label>
+                                                <div class="uk-grid-small uk-child-width-auto uk-grid" id="shirt-material">
+                                                    <label><input class="uk-radio" type="radio" name="radio1" checked>Фланель</label>
+                                                    <label><input class="uk-radio" type="radio" name="radio1">Мне повезет!</label>
+                                                </div>
+                                        </div>
+                                
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="paint-material">Чем рисуем:</label>
+                                                <div class="uk-grid-small uk-child-width-auto uk-grid" id="paint-material">
+                                                    <label><input class="uk-radio" type="radio" name="radio2" checked>Шелкография</label>
+                                                    <label><input class="uk-radio" type="radio" name="radio2">Белым мелом</label>
+                                                </div>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
                     </div> 
                 </div>
             </div>
 
-            <script src="js/main.js"></script>
+            
     </div>
 
-    
+    <script src="js/main.js"></script>
 </body>
 </html>
