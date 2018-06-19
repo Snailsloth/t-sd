@@ -1,2 +1,2 @@
 # t-sd
-#learning js, tshirt design tool
+#learning js, tshirt design tool fast prototyping
