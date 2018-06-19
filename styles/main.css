@@ -1,0 +1,15 @@
+.rin{
+    font-family:'Conv_Lazer84',Sans-Serif;
+    background-image: url(../assets/img/sun.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 300px;
+    overflow: visible;
+}
+
+.border{
+    border:2px solid rgba(136, 185, 204, 0.459);
+    border-radius: .4rem;
+}
+
