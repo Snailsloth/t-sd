@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles/uikit.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/fonts.css" type="text/css" charset="utf-8" />
+    <script src="js/jquery-3.3.1.js"></script>
     <script src="js/uikit.min.js"></script>
+
     <script src="js/fabric.min.js"></script>
     
     <title>Document</title>
@@ -70,17 +72,22 @@
 
 
                 <div class="uk-width-1-1 uk-width-1-2@m ">
-                    <div class="border uk-padding-small uk-text-center canvas-wrapper uk-position-relative">
-                            <div class="uk-position-absolute uk-position-top-left uk-padding-small">
-                                <span class="flip-switchers" onclick="flipToFront();">front</span>
-                                <span class="flip-switchers" onclick="flipToBack();">back</span>
-                            </div>
-                            <div class="uk-width-1-1">
-                                    <canvas id="c" width="480" height="510"></canvas>
-                            </div>
-                            <div class="uk-width-1-1">
-                                <input class="uk-button uk-button-default uk-margin-top" type="file" id="imgLoader" accept="image/*">
-                            </div>
+                    <div class="border uk-padding-small uk-text-center uk-position-relative">
+                        <div class="uk-position-absolute uk-position-top-left uk-padding-small">
+                            <span class="flip-switcher">front / back</span>
+                        </div>
+                        <div class="uk-width-1-1 uk-flex uk-flex-center">
+                            <div class="canvas-wrapper uk-flex uk-flex-center" style="width:490px;height:520px;">
+                                <canvas class="toggle" id="front" width="480" height="510"></canvas>
+                                <canvas class="toggle" id="back" width="480" height="510" style="display: none;"></canvas>
+                            </div>  
+                        </div>
+                                
+                                
+                        
+                        <div class="uk-width-1-1">
+                            <input class="uk-button uk-button-default uk-margin-top" type="file" id="imgLoader" accept="image/*">
+                        </div>
 
                     </div> 
                 </div>
