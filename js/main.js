@@ -2,19 +2,23 @@ var canvasBG_color_url = 'assets/img/white';
 // var canvasBG_side_url = '/_front.png';
 var canvasBG_front_url = canvasBG_color_url + '/_front.png';
 var canvasBG_back_url = canvasBG_color_url + '/_back.png';
+var activeCanvas = $('.activeCanvas').attr('id');;
 
 //toggle front-back shirt image
 $( ".flip-switcher" ).click(function() {
-	$( ".toggle" ).toggle();
+	// $( ".toggle" ).toggle();
+	$(".toggle").toggleClass("displayCanvas activeCanvas");
+	activeCanvas = $('.activeCanvas').attr('id');
+	
 });
 
 //tshirt front
-var canvasFront =  new fabric.Canvas('front', {
+var canvasFront =  new fabric.Canvas('canvasFront', {
 	width:480,
 	height:510,
 });
 //tshirt front
-var canvasBack =  new fabric.StaticCanvas('back', {
+var canvasBack =  new fabric.Canvas('canvasBack', {
 	width:480,
 	height:510,
 });
@@ -50,14 +54,34 @@ function refreshShirtColor(){
 // this.__canvases.push(canvasFront);
 
 
+
 function addArt(src){
-	fabric.Image.fromURL(src, function(img) {
-		img.scale(0.2).set({
-			left: 100,
-			top: 100,
+	if (activeCanvas == 'canvasFront'){
+
+		fabric.Image.fromURL(src, function(img) {
+			img.scale(0.2).set({
+				left: 100,
+				top: 100,
+			});
+			canvasFront.add(img).setActiveObject(img);
 		});
-		canvasFront.add(img).setActiveObject(img);
-	});
+
+
+
+	} else {
+
+
+		fabric.Image.fromURL(src, function(img) {
+			img.scale(0.2).set({
+				left: 100,
+				top: 100,
+			});
+			canvasBack.add(img).setActiveObject(img);
+		});
+
+
+	}
+	
 };
 
 // function showArtPreviews(){

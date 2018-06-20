@@ -12,6 +12,14 @@
 	min-width:480px;
 }
 
+.canvas-wrapper canvas{
+	display: none;
+}
+
+.displayCanvas{
+	display: block!important;
+}
+
 .flip-switcher{
 	font-size: 12px;
 	padding: 2px 4px;
@@ -37,7 +45,7 @@
 .art-preview{
 	width: 60px;
 	height: 60px;
-	border: 2px solid #666;
+	border: 2px solid #6666;
 	cursor: pointer;
 	margin: 0 5px 5px 0;
 	transition: box-shadow .1s ease-in-out;
@@ -52,3 +60,5 @@
 	-moz-box-shadow: 4px 4px 6px 1px rgba(199,199,199,1);
 	box-shadow: 3px 3px 3px -2px rgb(112, 111, 111);
 }
+
+
