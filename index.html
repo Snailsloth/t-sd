@@ -28,7 +28,7 @@
                 </span>
             </h1>
 
-            <div uk-grid class="uk-width-1-1 uk-grid-match">
+            <div uk-grid class="uk-width-1-1 uk-grid-match uk-margin-large-bottom">
                 <div class="uk-width-1-1 uk-width-1-4@m ">
                     <div class="border uk-padding-small">
                         <ul uk-tab>
@@ -39,7 +39,11 @@
                             <ul class="uk-switcher uk-margin">
                                 <li>
                                     <div>
-                                        <p>Превьюшки имеющихся изображений</p>
+                                        <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/bls.jpg">
+                                        <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/cat.png">
+                                        <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/fish.png">
+                                        <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/mandala.png">
+                                        <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/tkl.png">
                                     </div>
                                 </li>
                                 <li>
@@ -82,9 +86,6 @@
                                 <canvas class="toggle" id="back" width="480" height="510" style="display: none;"></canvas>
                             </div>  
                         </div>
-                                
-                                
-                        
                         <div class="uk-width-1-1">
                             <input class="uk-button uk-button-default uk-margin-top" type="file" id="imgLoader" accept="image/*">
                         </div>
