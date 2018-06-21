@@ -1,28 +1,29 @@
+//default white t-shirt on page load
 var canvasBG_color_url = 'assets/img/white';
-// var canvasBG_side_url = '/_front.png';
+// link building when swapping  whirt colors
 var canvasBG_front_url = canvasBG_color_url + '/_front.png';
 var canvasBG_back_url = canvasBG_color_url + '/_back.png';
-var activeCanvas = $('.activeCanvas').attr('id');;
+var activeCanvas = $('.activeCanvas').attr('id');
 
 //toggle front-back shirt image
 $( ".flip-switcher" ).click(function() {
-	$( ".toggle" ).toggle("teetttett");
+	// $( ".toggle" ).toggle("teetttett");
 	$(".toggle").toggleClass("displayCanvas activeCanvas");
+	//activeCanvas variable, for find canvas we need when adding objects
 	activeCanvas = $('.activeCanvas').attr('id');
-	
+	//remove delete object button
+	$(".deleteBtn").remove();
 });
 
 //tshirt front
 var canvasFront =  new fabric.Canvas('canvasFront', {
-	// width:480,
-	// height:510,
 });
 //tshirt back
 var canvasBack =  new fabric.Canvas('canvasBack', {
-	// width:480,
-	// height:510,
 });
 
+//color picker
+$('.color').colorPicker();
 
 
 
@@ -48,18 +49,14 @@ function refreshShirtColor(){
 
 
 
-//-------------------------------adding objects-------------------------------//
-// canvasFront.add(new fabric.Circle({ radius: 30, fill: '#f55', top: 100, left: 100 }));
-// canvasFront.hoverCursor = 'pointer';
-// this.__canvases.push(canvasFront);
+//-------------------------------adding Objects-------------------------------//
 
-
-
+//-----------------Arts-----------------//
 function addArt(src){
 	if (activeCanvas == 'canvasFront'){
 
 		fabric.Image.fromURL(src, function(img) {
-			img.scale(0.2).set({
+			img.scale(1).set({
 				left: 100,
 				top: 100,
 			});
@@ -72,7 +69,7 @@ function addArt(src){
 
 
 		fabric.Image.fromURL(src, function(img) {
-			img.scale(0.2).set({
+			img.scale(1).set({
 				left: 100,
 				top: 100,
 			});
@@ -83,6 +80,61 @@ function addArt(src){
 	}
 	
 };
+
+//-----------------Text-----------------//
+
+//-------------------------------removing Objects-------------------------------//
+
+
+function addDeleteBtn(x, y, w){
+	$(".deleteBtn").remove(); 
+	var btnLeft = x;
+	var btnTop = y - 25;
+	var widthadjust=w/2;
+	btnLeft=widthadjust+btnLeft-10;
+	var deleteBtn = '<img src="assets/img/remove.png" class="deleteBtn" style="width:30px; position:absolute;top:'+btnTop+'px;left:'+btnLeft+'px;cursor:pointer;"/>';
+	$(".canvas-container").append(deleteBtn);
+}
+
+canvasFront.on('object:selected',function(e){
+		addDeleteBtn(e.target.oCoords.mt.x, e.target.oCoords.mt.y, e.target.width);
+});
+
+canvasFront.on('mouse:down',function(e){
+    if(!eval(canvasFront).getActiveObject())
+    {
+		$(".deleteBtn").remove(); 
+    }
+});
+
+canvasFront.on('object:modified',function(e){
+	addDeleteBtn(e.target.oCoords.mt.x, e.target.oCoords.mt.y, e.target.width);
+});
+
+canvasFront.on('object:moving',function(e){
+	$(".deleteBtn").remove(); 
+});
+
+$(document).on('click',".deleteBtn",function(){
+	if(canvasFront.getActiveObject())
+	{
+		canvasFront.remove(canvasFront.getActiveObject());
+		$(".deleteBtn").remove();
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function showArtPreviews(){
 // 	var folder = "assets/img/arts";

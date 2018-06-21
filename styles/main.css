@@ -1,3 +1,7 @@
+html {
+	font-family: 'Comfortaa', cursive;
+}
+
 .rin{
 	font-family:'Conv_Lazer84',Sans-Serif;
 	background-image: url(../assets/img/sun.png);
@@ -41,6 +45,12 @@
 .border{
 	border:2px solid rgba(136, 185, 204, 0.459);
 	border-radius: .4rem;
+}
+
+
+.uk-tab > .uk-active > a {
+    color: rgb(250, 55, 165);
+    border-color: rgba(136, 185, 204, 0.459);
 }
 
 .art-preview{
