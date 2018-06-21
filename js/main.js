@@ -22,10 +22,11 @@ var canvasFront =  new fabric.Canvas('canvasFront', {
 var canvasBack =  new fabric.Canvas('canvasBack', {
 });
 
-//--color picker
+
+//-------------------------------color picker-------------------------------//
 //-get "Добавить текст" button
 var addTextButton = $('.addTextButton');
-var aTextColor;
+var aTextColor = '#666';
 
 function changeTextButtonColor(){
 	$('.addTextButton').css('color', aTextColor);
@@ -42,6 +43,8 @@ $("#flat").spectrum({
 });
 
 
+
+//-------------------------------t-shirt colors-------------------------------//
 //rerender with new links with chosen colors
 refreshShirtColor();
 //change color links after option input
@@ -64,7 +67,6 @@ function refreshShirtColor(){
 
 
 //-------------------------------adding Objects-------------------------------//
-
 //-----------------Arts-----------------//
 function addArt(src){
 	if (activeCanvas == 'canvasFront'){
@@ -95,8 +97,31 @@ function addArt(src){
 	
 };
 
-//-----------------Text-----------------//
 
+
+//-----------------Text-----------------//
+function addText(){
+	if (activeCanvas == 'canvasFront'){
+
+		canvasFront.add(new fabric.IText('Кликни, измени', { 
+			fontFamily: 'Comfortaa',
+			left: 100, 
+			top: 100 ,
+			fontSize: 20,
+			fill:aTextColor
+		}));
+	}	else	{
+
+		canvasBack.add(new fabric.IText('Кликни, измени', { 
+			fontFamily: 'Comfortaa',
+			left: 100, 
+			top: 100 ,
+			fontSize: 20,
+			fill:aTextColor
+		}));
+	}
+
+}
 //-------------------------------removing Objects-------------------------------//
 
 
@@ -110,6 +135,8 @@ function addDeleteBtn(x, y, w){
 	$(".canvas-container").append(deleteBtn);
 }
 
+
+//-i'am very ashamed about things down there, mkay
 canvasFront.on('object:selected',function(e){
 		addDeleteBtn(e.target.oCoords.mt.x, e.target.oCoords.mt.y, e.target.width);
 });
@@ -137,7 +164,32 @@ $(document).on('click',".deleteBtn",function(){
 	}
 });
 
+canvasBack.on('object:selected',function(e){
+	addDeleteBtn(e.target.oCoords.mt.x, e.target.oCoords.mt.y, e.target.width);
+});
 
+canvasBack.on('mouse:down',function(e){
+if(!eval(canvasBack).getActiveObject())
+{
+	$(".deleteBtn").remove(); 
+}
+});
+
+canvasBack.on('object:modified',function(e){
+addDeleteBtn(e.target.oCoords.mt.x, e.target.oCoords.mt.y, e.target.width);
+});
+
+canvasBack.on('object:moving',function(e){
+$(".deleteBtn").remove(); 
+});
+
+$(document).on('click',".deleteBtn",function(){
+if(canvasBack.getActiveObject())
+{
+	canvasBack.remove(canvasBack.getActiveObject());
+	$(".deleteBtn").remove();
+}
+});
 
 
 
