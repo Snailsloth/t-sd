@@ -1,5 +1,5 @@
 //default white t-shirt on page load
-var canvasBG_color_url = 'assets/img/white';
+var canvasBG_color_url = './assets/img/white';
 // link building when swapping  whirt colors
 var canvasBG_front_url = canvasBG_color_url + '/_front.png';
 var canvasBG_back_url = canvasBG_color_url + '/_back.png';
@@ -49,7 +49,7 @@ $("#flat").spectrum({
 refreshShirtColor();
 //change color links after option input
 function colorChange(color){
-	canvasBG_color_url = 'assets/img/' + color;
+	canvasBG_color_url = './assets/img/' + color;
 	changeCanvasBgUrl();
 	refreshShirtColor();
 	return canvasBG_color_url,canvasBG_front_url,canvasBG_back_url;
