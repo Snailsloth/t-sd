@@ -6,7 +6,7 @@ var activeCanvas = $('.activeCanvas').attr('id');;
 
 //toggle front-back shirt image
 $( ".flip-switcher" ).click(function() {
-	// $( ".toggle" ).toggle();
+	$( ".toggle" ).toggle("teetttett");
 	$(".toggle").toggleClass("displayCanvas activeCanvas");
 	activeCanvas = $('.activeCanvas').attr('id');
 	
@@ -14,13 +14,13 @@ $( ".flip-switcher" ).click(function() {
 
 //tshirt front
 var canvasFront =  new fabric.Canvas('canvasFront', {
-	width:480,
-	height:510,
+	// width:480,
+	// height:510,
 });
-//tshirt front
+//tshirt back
 var canvasBack =  new fabric.Canvas('canvasBack', {
-	width:480,
-	height:510,
+	// width:480,
+	// height:510,
 });
 
 

@@ -77,18 +77,31 @@
 
                 <div class="uk-width-1-1 uk-width-1-2@m ">
                     <div class="border uk-padding-small uk-text-center uk-position-relative">
-                        <div class="uk-position-absolute uk-position-top-left uk-padding-small">
+                        <!-- <div class="uk-position-absolute uk-position-top-left uk-padding-small">
                             <span class="flip-switcher">front / back</span>
                         </div>
                         <div class="uk-width-1-1 uk-flex uk-flex-center">
                             <div class="canvas-wrapper uk-flex uk-flex-center" style="width:490px;height:520px;">
-                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" style="width:490px;height:520px;"></canvas>
-                                <canvas class="toggle" id="canvasBack" style="width:490px;height:520px;" ></canvas>
+                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
+                                <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
                             </div>  
                         </div>
                         <div class="uk-width-1-1">
                             <input class="uk-button uk-button-default uk-margin-top" type="file" id="imgLoader" accept="image/*">
-                        </div>
+                        </div> -->
+                        <ul uk-tab>
+                            <li><a class="flip-switcher" href="#">Живот</a></li>
+                            <li><a class="flip-switcher" href="#">Спина</a></li>
+                        </ul>
+                        
+                        <ul class="uk-switcher uk-margin">
+                            <li class="uk-flex uk-flex-center">
+                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
+                            </li>
+                            <li class="uk-flex uk-flex-center">
+                                <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
+                            </li>
+                        </ul>
 
                     </div> 
                 </div>
