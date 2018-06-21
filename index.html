@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/uikit.min.css">
+    <link rel="stylesheet" href="styles/spectrum.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/fonts.css" type="text/css" charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&amp;subset=cyrillic" rel="stylesheet"> 
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/fabric.min.js"></script>
-    <script src="js/jqColorPicker.min.js"></script>
+    <script src="js/spectrum.js"></script>
     
     <title>Document</title>
 </head>
@@ -49,8 +50,15 @@
                                 </li>
                                 <li>
                                     <div>
-                                        <input class="color no-alpha" value="#B6BD79" style="background-color: rgb(182, 189, 121); color: rgb(34, 34, 34);">
-                                        <button class="uk-button uk-button-default" type="button">Добавить текст</button>
+                                        
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="text-color">Цвет текста</label>
+                                                <div class="uk-form-controls">
+                                                        <!-- <input class="color no-alpha" id="text-color" value="#B6BD79" style="background-color: rgb(255, 255, 255); color: #666;"> -->
+                                                        <input type='text' id="flat" />
+                                                </div>
+                                        </div>
+                                        <button class="uk-button uk-button-default addTextButton" type="button">Добавить текст</button>
                                     </div>
                                 </li>
                         </ul>
@@ -148,7 +156,7 @@
                                         </div>
 
                                         <div class="uk-margin">
-                                                <label class="uk-form-label" for="shirt-color">Цвет</label>
+                                                <label class="uk-form-label" for="shirt-color">Цвет настроения</label>
                                                 <div class="uk-form-controls">
                                                     <select class="uk-select" id="shirt-color" onchange="colorChange(this.value)">
                                                             <option value="white" selected="selected">white</option>

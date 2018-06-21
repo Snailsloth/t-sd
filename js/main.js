@@ -22,10 +22,24 @@ var canvasFront =  new fabric.Canvas('canvasFront', {
 var canvasBack =  new fabric.Canvas('canvasBack', {
 });
 
-//color picker
-$('.color').colorPicker();
+//--color picker
+//-get "Добавить текст" button
+var addTextButton = $('.addTextButton');
+var aTextColor;
 
+function changeTextButtonColor(){
+	$('.addTextButton').css('color', aTextColor);
+};
 
+$("#flat").spectrum({
+    flat: true,
+	showInput: true,
+	//- move event, changing textColor var
+	move: function(tinycolor) {
+		aTextColor = tinycolor.toHexString();
+		changeTextButtonColor();
+	},
+});
 
 
 //rerender with new links with chosen colors
