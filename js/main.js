@@ -60,7 +60,10 @@ function changeCanvasBgUrl(){
 	return canvasBG_front_url,canvasBG_back_url;
 };
 function refreshShirtColor(){
-	canvasFront.setBackgroundImage(canvasBG_front_url, canvasFront.renderAll.bind(canvasFront));
+	canvasFront.setBackgroundImage(canvasBG_front_url, canvasFront.renderAll.bind(canvasFront),{
+
+
+	});
 	canvasBack.setBackgroundImage(canvasBG_back_url, canvasBack.renderAll.bind(canvasBack));
 };
 
