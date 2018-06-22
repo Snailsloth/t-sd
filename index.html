@@ -72,7 +72,7 @@
 
 
 
-                <div class="uk-width-1-1 uk-width-xxlarge@m ">
+                <div class="uk-width-1-1 uk-width-xlarge@m ">
                     <div class="border uk-padding-small uk-text-center uk-position-relative">
                         <!-- <div class="uk-position-absolute uk-position-top-left uk-padding-small">
                             <span class="flip-switcher">front / back</span>
@@ -92,10 +92,10 @@
                         </ul>
                         
                         <ul class="uk-switcher uk-margin">
-                            <li class="uk-flex uk-flex-center uk-padding-large">
+                            <li class="uk-flex uk-flex-center uk-padding">
                                 <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
                             </li>
-                            <li class="uk-flex uk-flex-center uk-padding-large">
+                            <li class="uk-flex uk-flex-center uk-padding">
                                 <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
                             </li>
                         </ul>
@@ -154,7 +154,12 @@
                                                 </div>
                                         </div>
 
-                                        
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="quantity">Количество</label>
+                                                <div class="uk-form-controls">
+                                                    <input id="quantity" class="uk-input" type="number" placeholder="10" value="10">
+                                                </div>                                                
+                                        </div>
                                 
                                         <div class="uk-margin">
                                             <textarea class="uk-textarea" rows="5" placeholder="Что ещё мы должны знать?"></textarea>
@@ -176,7 +181,25 @@
                                                 </div>
                                         </div>
                                         <div class="uk-margin">
-                                                <button type="button" onclick="getPreviews()"> Открыть превьюшки в новом окне</button>
+                                                <label class="uk-form-label" for="h1-cm">Высота от ворота(см)</label>
+                                                <div class="uk-form-controls">
+                                                    <input id="h1-cm" class="uk-input" type="number" placeholder="10" value="10">
+                                                </div>                                                
+                                        </div>
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="h2-cm">Высота принта(см)</label>
+                                                <div class="uk-form-controls">
+                                                    <input id="h2-cm" class="uk-input" type="number" placeholder="40" value="10">
+                                                </div>                                                
+                                        </div>
+                                        <div class="uk-margin">
+                                                <label class="uk-form-label" for="h3-cm">Ширина принта(см)</label>
+                                                <div class="uk-form-controls">
+                                                    <input id="h3-cm" class="uk-input" type="number" placeholder="50" value="10">
+                                                </div>                                                
+                                        </div>
+                                        <div class="uk-margin-large-top uk-flex uk-flex-center uk-flex-middle">
+                                                <button class="uk-button uk-button-danger" type="button" onclick="getPreviews()"> Открыть превьюшки в новом окне</button>
                                         </div>
 
                                     </fieldset>
