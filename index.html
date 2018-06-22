@@ -31,7 +31,7 @@
             </h1>
 
             <div uk-grid class="uk-width-1-1 uk-grid-match uk-margin-large-bottom">
-                <div class="uk-width-1-1 uk-width-1-4@m ">
+                <div class="uk-width-1-1 uk-width-expand@m ">
                     <div class="border uk-padding-small">
                         <ul uk-tab>
                             <li><a href="#">Изображения</a></li>
@@ -72,7 +72,7 @@
 
 
 
-                <div class="uk-width-1-1 uk-width-1-2@m ">
+                <div class="uk-width-1-1 uk-width-xxlarge@m ">
                     <div class="border uk-padding-small uk-text-center uk-position-relative">
                         <!-- <div class="uk-position-absolute uk-position-top-left uk-padding-small">
                             <span class="flip-switcher">front / back</span>
@@ -92,13 +92,17 @@
                         </ul>
                         
                         <ul class="uk-switcher uk-margin">
-                            <li class="uk-flex uk-flex-center">
+                            <li class="uk-flex uk-flex-center uk-padding-large">
                                 <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
                             </li>
-                            <li class="uk-flex uk-flex-center">
+                            <li class="uk-flex uk-flex-center uk-padding-large">
                                 <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
                             </li>
                         </ul>
+                        <div>
+                            <p>Добавить своё творчество:</p>
+                            <input type="file" id="imgLoader" accept=".png" class="uk-button uk-button-default">
+                        </div>
                     </div> 
                 </div>
 
@@ -112,7 +116,7 @@
 
 
 
-                <div class="uk-width-1-1 uk-width-1-4@m ">
+                <div class="uk-width-1-1 uk-width-expand@m ">
                     <div class="border uk-padding-small">
                             <form>
                                     <fieldset class="uk-fieldset">
@@ -123,7 +127,7 @@
                                             <input class="uk-input" type="text" placeholder="Как зовут?">
                                         </div>
                                         <div class="uk-margin">
-                                            <input class="uk-input" type="text" placeholder="Почта?">
+                                            <input class="uk-input" type="email" placeholder="Почта?">
                                         </div>
                                 
                                         <div class="uk-margin">
@@ -140,9 +144,9 @@
                                                 <label class="uk-form-label" for="shirt-color">Цвет настроения</label>
                                                 <div class="uk-form-controls">
                                                     <select class="uk-select" id="shirt-color" onchange="colorChange(this.value)">
-                                                            <option value="white" selected="selected">white</option>
+                                                            <option value="white">white</option>
                                                             <option value="green">green</option>
-                                                            <option value="navy">navy</option>
+                                                            <option value="navy" selected="selected">navy</option>
                                                             <option value="purple">purple</option>
                                                             <option value="red">red</option>
                                                             <option value="royal">royal</option>

@@ -1,5 +1,5 @@
 //default white t-shirt on page load
-var canvasBG_color_url = 'assets/img/navy';
+var canvasBG_color_url = 'assets/img/white';
 // link building when swapping  whirt colors
 var canvasBG_front_url = canvasBG_color_url + '/_front.png';
 var canvasBG_back_url = canvasBG_color_url + '/_back.png';
@@ -17,7 +17,6 @@ $( ".flip-switcher" ).click(function() {
 
 //tshirt front
 var canvasFront =  new fabric.Canvas('canvasFront', {
-	padding: 200
 });
 //tshirt back
 var canvasBack =  new fabric.Canvas('canvasBack', {
@@ -62,19 +61,10 @@ function changeCanvasBgUrl(){
 };
 function refreshShirtColor(){
 	canvasFront.setBackgroundImage(canvasBG_front_url, canvasFront.renderAll.bind(canvasFront));
-	
-
-	// canvasBack.Image.fromURL(canvasBG_front_url,canvasFront.renderAll.bind(canvasFront))
-
 	canvasBack.setBackgroundImage(canvasBG_back_url, canvasBack.renderAll.bind(canvasBack));
 };
 
 
-// fabric.Image.fromURL(canvasBG_front_url, function(oImg) {
-// 	// scale image down, and flip it, before adding it onto canvas
-// 	oImg.scale(0.5).set('flipX', true);
-// 	canvasFront.add(oImg);
-// });
 
 //-------------------------------adding Objects-------------------------------//
 //-----------------Arts-----------------//
@@ -86,7 +76,6 @@ function addArt(src){
 				left: 100,
 				top: 100,
 			});
-			img.scaleToWidth(canvasFront.getWidth()/2);
 			canvasFront.add(img).setActiveObject(img);
 		});
 
@@ -100,7 +89,6 @@ function addArt(src){
 				left: 100,
 				top: 100,
 			});
-			img.scaleToWidth(canvasBack.getWidth()/2);
 			canvasBack.add(img).setActiveObject(img);
 		});
 
@@ -154,7 +142,7 @@ canvasFront.on('object:selected',function(e){
 });
 
 canvasFront.on('mouse:down',function(e){
-    if(canvasFront.getActiveObject())
+    if(!eval(canvasFront).getActiveObject())
     {
 		$(".deleteBtn").remove(); 
     }
@@ -208,60 +196,8 @@ if(canvasBack.getActiveObject())
 
 
 
-//only png
-// function checkFileExtension() {
-//     var fileName = document.getElementById("imgLoader").value;
 
-//     if(!fileName)
-//       return false;
 
-//     var extension = fileName.split(".");
-//     if(extension && extension.length > 1){
-//         extension = [extension.length-1].toUpperCase();
-//         if (["PNG"].indexOf(extension) != -1)
-//             return true;
-//         else{
-//             alert("Browse to upload a valid File with png extension");
-//             return false;
-//         }
-//     }
-//     else{
-//         alert("Browse to upload a valid File with png extension");
-//         return false;
-//     }
-// };
-//image loader by jaibuu https://jsfiddle.net/jaibuu/Vp6wa/
-document.getElementById('imgLoader').onchange = function handleImage(e) {
-	var reader = new FileReader();
-		reader.onload = function (event) { 
-			var imgObj = new Image();
-			imgObj.src = event.target.result;
-			imgObj.onload = function () {
-				// start fabricJS stuff
-				
-				var image = new fabric.Image(imgObj);
-				image.set({
-					left: 0,
-					top: 0,
-					angle: 0,
-					padding: 10,
-					cornersize: 10
-				});
-				image.scaleToWidth(canvasFront.getWidth()/2);
-				//image.scale(getRandomNum(0.1, 0.25)).setCoords();
-				if (activeCanvas == 'canvasFront'){
-					canvasFront.add(image);
-				} else{
-					canvasBack.add(image);
-				}
-				
-				
-				// end fabricJS stuff
-			}
-			
-		}
-		reader.readAsDataURL(e.target.files[0]);
-}
 
 
 
