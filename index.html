@@ -12,203 +12,188 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/fabric.min.js"></script>
-    <script src="js/spectrum.js"></script>
     
-    <title>Document</title>
+    <title>truncated ver</title>
 </head>
 <body>
     <div class="uk-container uk-container-large">
-            <h1 class="uk-heading-line uk-margin-top uk-text-center uk-margin-large-bottom">
-                <span class="rin">
-                    <span style="font-size:1.4rem">Make</span>
-                    <br>
-                    <span style="font-size:1.9rem">your</span>
-                    <br>
-                    <span style="font-size:2.3rem">t-shirt</span>
-                    <br>
-                    <span style="font-size:2.8rem">BY O L E J E ' NKA</span>
-                </span>
-            </h1>
-
-            <div uk-grid class="uk-width-1-1 uk-grid-match uk-margin-large-bottom">
-                <div class="uk-width-1-1 uk-width-expand@m ">
-                    <div class="border uk-padding-small">
-                        <ul uk-tab>
-                            <li><a href="#">Изображения</a></li>
-                            <li><a href="#">Умная надпись</a></li>
-                        </ul>
-                            
-                        <ul class="uk-switcher uk-margin">
-                            <li>
-                                <div>
-                                    <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/bls.jpg">
-                                    <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/cat.png">
-                                    <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/fish.png">
-                                    <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/mandala.png">
-                                    <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/tkl.png">
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    
-                                    <div class="uk-margin">
-                                            <label class="uk-form-label" for="text-color">Цвет текста</label>
-                                            <div class="uk-form-controls">
-                                                    <!-- <input class="color no-alpha" id="text-color" value="#B6BD79" style="background-color: rgb(255, 255, 255); color: #666;"> -->
-                                                    <input type='text' id="flat" />
-                                            </div>
-                                    </div>
-                                    <button class="uk-button uk-button-default addTextButton" type="button" onclick="addText()">Добавить текст</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> 
-                </div>
+        <h1 class="uk-heading-line uk-margin-top uk-text-center uk-margin-large-bottom">
+            <span class="rin">
+                <span style="font-size:1.4rem">Make</span>
+                <br>
+                <span style="font-size:1.9rem">your</span>
+                <br>
+                <span style="font-size:2.3rem">t-shirt</span>
+                <br>
+                <span style="font-size:2.8rem">BY O L E J E ' NKA</span>
+            </span>
+        </h1>
 
 
-
-
-
-
-
-
-                <div class="uk-width-1-1 uk-width-xlarge@m ">
-                    <div class="border uk-padding-small uk-text-center uk-position-relative">
-                        <!-- <div class="uk-position-absolute uk-position-top-left uk-padding-small">
-                            <span class="flip-switcher">front / back</span>
-                        </div>
-                        <div class="uk-width-1-1 uk-flex uk-flex-center">
-                            <div class="canvas-wrapper uk-flex uk-flex-center" style="width:490px;height:520px;">
-                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
-                                <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
-                            </div>  
-                        </div>
-                        <div class="uk-width-1-1">
-                            <input class="uk-button uk-button-default uk-margin-top" type="file" id="imgLoader" accept="image/*">
-                        </div> -->
-                        <ul uk-tab>
-                            <li><a class="flip-switcher" href="#">Живот</a></li>
-                            <li><a class="flip-switcher" href="#">Спина</a></li>
-                        </ul>
+        <div uk-grid class="uk-width-1-1 uk-grid-match uk-margin-large-bottom">
+            <div class="uk-width-1-1">
+                <div class="border uk-padding-small">
+                    <ul uk-tab>
+                        <li><a href="#">Изображения</a></li>
+                    
+                    </ul>
                         
-                        <ul class="uk-switcher uk-margin">
-                            <li class="uk-flex uk-flex-center uk-padding">
-                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
-                            </li>
-                            <li class="uk-flex uk-flex-center uk-padding">
-                                <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
-                            </li>
-                        </ul>
-                        <div>
-                            <p>Добавить своё творчество:</p>
-                            <input type="file" id="imgLoader" accept=".png" class="uk-button uk-button-default">
-                        </div>
-                    </div> 
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-                <div class="uk-width-1-1 uk-width-expand@m ">
-                    <div class="border uk-padding-small">
-                            <form>
-                                    <fieldset class="uk-fieldset">
-                                
-                                        <legend class="uk-legend">Заполни!</legend>
-                                
-                                        <div class="uk-margin">
-                                            <input class="uk-input" type="text" placeholder="Как зовут?">
-                                        </div>
-                                        <div class="uk-margin">
-                                            <input class="uk-input" type="email" placeholder="Почта?">
-                                        </div>
-                                
-                                        <div class="uk-margin">
-                                            <label class="uk-form-label" for="shirt-size">Размер (анонимно!) </label>
-                                            <div class="uk-form-controls">
-                                                <select class="uk-select" id="shirt-size">
-                                                    <option>XXXXXL</option>
-                                                    <option>LLLLLX</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="shirt-color">Цвет настроения</label>
-                                                <div class="uk-form-controls">
-                                                    <select class="uk-select" id="shirt-color" onchange="colorChange(this.value)">
-                                                            <option value="white">white</option>
-                                                            <option value="green">green</option>
-                                                            <option value="navy" selected="selected">navy</option>
-                                                            <option value="purple">purple</option>
-                                                            <option value="red">red</option>
-                                                            <option value="royal">royal</option>
-                                                    </select>
-                                                </div>
-                                        </div>
-
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="quantity">Количество</label>
-                                                <div class="uk-form-controls">
-                                                    <input id="quantity" class="uk-input" type="number" placeholder="10" value="10">
-                                                </div>                                                
-                                        </div>
-                                
-                                        <div class="uk-margin">
-                                            <textarea class="uk-textarea" rows="5" placeholder="Что ещё мы должны знать?"></textarea>
-                                        </div>
-                                        
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="shirt-material">Материал:</label>
-                                                <div class="uk-grid-small uk-child-width-auto uk-grid" id="shirt-material">
-                                                    <label><input class="uk-radio" type="radio" name="radio1" checked>Фланель</label>
-                                                    <label><input class="uk-radio" type="radio" name="radio1">Мне повезет!</label>
-                                                </div>
-                                        </div>
-                                
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="paint-material">Чем рисуем:</label>
-                                                <div class="uk-grid-small uk-child-width-auto uk-grid" id="paint-material">
-                                                    <label><input class="uk-radio" type="radio" name="radio2" checked>Шелкография</label>
-                                                    <label><input class="uk-radio" type="radio" name="radio2">Белым мелом</label>
-                                                </div>
-                                        </div>
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="h1-cm">Высота от ворота(см)</label>
-                                                <div class="uk-form-controls">
-                                                    <input id="h1-cm" class="uk-input" type="number" placeholder="10" value="10">
-                                                </div>                                                
-                                        </div>
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="h2-cm">Высота принта(см)</label>
-                                                <div class="uk-form-controls">
-                                                    <input id="h2-cm" class="uk-input" type="number" placeholder="40" value="10">
-                                                </div>                                                
-                                        </div>
-                                        <div class="uk-margin">
-                                                <label class="uk-form-label" for="h3-cm">Ширина принта(см)</label>
-                                                <div class="uk-form-controls">
-                                                    <input id="h3-cm" class="uk-input" type="number" placeholder="50" value="10">
-                                                </div>                                                
-                                        </div>
-                                        <div class="uk-margin-large-top uk-flex uk-flex-center uk-flex-middle">
-                                                <button class="uk-button uk-button-danger" type="button" onclick="getPreviews()"> Открыть превьюшки в новом окне</button>
-                                        </div>
-
-                                    </fieldset>
-                                </form>
-                    </div> 
-                </div>
+                    <ul class="uk-switcher uk-margin">
+                        <li>
+                            <div>
+                                <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/bls.jpg">
+                                <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/cat.png">
+                                <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/fish.png">
+                                <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/mandala.png">
+                                <img onclick="addArt(this.src)" class=" art-preview uk-border-circle" width="40" height="40" src="assets/img/arts/tkl.png">
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div> 
             </div>
 
-            
+
+
+
+
+
+
+
+            <div class="uk-width-1-1 uk-width-2-3@m ">
+                <div class="border uk-padding-small uk-text-center uk-position-relative">
+                    <ul uk-tab>
+                        <li><a class="flip-switcher" href="#">Живот</a></li>
+                        <li><a class="flip-switcher" href="#">Спина</a></li>
+                    </ul>
+                    
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-flex uk-flex-center uk-padding uk-position-relative">
+                            <div class="uk-form-horizontal form-on-canvas form-on-canvas-top">
+                                    <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-horizontal-text">Text</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+                                            </div>
+                                    </div>
+                            </div>
+                                
+
+                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
+                            
+                        </li>
+                        <li class="uk-flex uk-flex-center uk-padding">
+                            <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
+                        </li>
+                    </ul>
+                    <div>
+                        <p>Добавить своё творчество:</p>
+                        <input type="file" id="imgLoader" accept=".png" class="uk-button uk-button-default">
+                    </div>
+                </div> 
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="uk-width-1-1 uk-width-expand@m ">
+                    <div class="border uk-padding-small">
+                        <form>
+                            <fieldset class="uk-fieldset">
+                        
+                                <legend class="uk-legend">Заполни!</legend>
+                        
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="text" placeholder="Как зовут?">
+                                </div>
+                                <div class="uk-margin">
+                                    <input class="uk-input" type="email" placeholder="Почта?">
+                                </div>
+                        
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="shirt-size">Размер (анонимно!) </label>
+                                    <div class="uk-form-controls">
+                                        <select class="uk-select" id="shirt-size">
+                                            <option>XXXXXL</option>
+                                            <option>LLLLLX</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="shirt-color">Цвет настроения</label>
+                                        <div class="uk-form-controls">
+                                            <select class="uk-select" id="shirt-color" onchange="colorChange(this.value)">
+                                                    <option value="white">white</option>
+                                                    <option value="green">green</option>
+                                                    <option value="navy" selected="selected">navy</option>
+                                                    <option value="purple">purple</option>
+                                                    <option value="red">red</option>
+                                                    <option value="royal">royal</option>
+                                            </select>
+                                        </div>
+                                </div>
+
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="quantity">Количество</label>
+                                        <div class="uk-form-controls">
+                                            <input id="quantity" class="uk-input" type="number" placeholder="10" value="10">
+                                        </div>                                                
+                                </div>
+                        
+                                <div class="uk-margin">
+                                    <textarea class="uk-textarea" rows="5" placeholder="Что ещё мы должны знать?"></textarea>
+                                </div>
+                                
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="shirt-material">Материал:</label>
+                                        <div class="uk-grid-small uk-child-width-auto uk-grid" id="shirt-material">
+                                            <label><input class="uk-radio" type="radio" name="radio1" checked>Фланель</label>
+                                            <label><input class="uk-radio" type="radio" name="radio1">Мне повезет!</label>
+                                        </div>
+                                </div>
+                        
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="paint-material">Чем рисуем:</label>
+                                        <div class="uk-grid-small uk-child-width-auto uk-grid" id="paint-material">
+                                            <label><input class="uk-radio" type="radio" name="radio2" checked>Шелкография</label>
+                                            <label><input class="uk-radio" type="radio" name="radio2">Белым мелом</label>
+                                        </div>
+                                </div>
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="h1-cm">Высота от ворота(см)</label>
+                                        <div class="uk-form-controls">
+                                            <input id="h1-cm" class="uk-input" type="number" placeholder="10" value="10">
+                                        </div>                                                
+                                </div>
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="h2-cm">Высота принта(см)</label>
+                                        <div class="uk-form-controls">
+                                            <input id="h2-cm" class="uk-input" type="number" placeholder="40" value="10">
+                                        </div>                                                
+                                </div>
+                                <div class="uk-margin">
+                                        <label class="uk-form-label" for="h3-cm">Ширина принта(см)</label>
+                                        <div class="uk-form-controls">
+                                            <input id="h3-cm" class="uk-input" type="number" placeholder="50" value="10">
+                                        </div>                                                
+                                </div>
+                                <div class="uk-margin-large-top uk-flex uk-flex-center uk-flex-middle">
+                                        <button class="uk-button uk-button-danger" type="button" onclick="getPreviews()"> Открыть превьюшки в новом окне</button>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div> 
+                </div>
+        </div>
     </div>
 
     <script src="js/main.js"></script>

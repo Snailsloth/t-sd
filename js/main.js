@@ -25,25 +25,6 @@ var canvasBack =  new fabric.Canvas('canvasBack', {
 
 
 //-------------------------------color picker-------------------------------//
-//-get "Добавить текст" button
-var addTextButton = $('.addTextButton');
-var aTextColor = '#666';
-
-function changeTextButtonColor(){
-	$('.addTextButton').css('color', aTextColor);
-};
-
-$("#flat").spectrum({
-    flat: true,
-	showInput: true,
-	//- move event, changing textColor var
-	move: function(tinycolor) {
-		aTextColor = tinycolor.toHexString();
-		changeTextButtonColor();
-	},
-});
-
-
 
 //-------------------------------t-shirt colors-------------------------------//
 //rerender with new links with chosen colors
@@ -112,28 +93,7 @@ function addArt(src){
 
 
 //-----------------Text-----------------//
-function addText(){
-	if (activeCanvas == 'canvasFront'){
 
-		canvasFront.add(new fabric.IText('Кликни, измени', { 
-			fontFamily: 'Comfortaa',
-			left: 100, 
-			top: 100 ,
-			fontSize: 20,
-			fill:aTextColor
-		}));
-	}	else	{
-
-		canvasBack.add(new fabric.IText('Кликни, измени', { 
-			fontFamily: 'Comfortaa',
-			left: 100, 
-			top: 100 ,
-			fontSize: 20,
-			fill:aTextColor
-		}));
-	}
-
-}
 //-------------------------------removing Objects-------------------------------//
 
 
