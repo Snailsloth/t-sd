@@ -264,6 +264,14 @@ document.getElementById('imgLoader').onchange = function handleImage(e) {
 }
 
 
+//get previews of t-shirts for server
+function getPreviews(){
+
+		// canvas.deactivateAll().renderAll();  
+		window.open(canvasFront.toDataURL('png')); 
+		window.open(canvasBack.toDataURL('png')); 
+
+};
 
 
 // function showArtPreviews(){
