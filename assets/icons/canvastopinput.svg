@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="canvastopinput.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3251">
+      <stop
+         style="stop-color:#ef496d;stop-opacity:1;"
+         offset="0"
+         id="stop3247" />
+      <stop
+         style="stop-color:#ef496d;stop-opacity:0;"
+         offset="1"
+         id="stop3249" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3157"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ef496d;stop-opacity:1;"
+         offset="0"
+         id="stop3155" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3251"
+       id="radialGradient3253"
+       cx="5.8162442"
+       cy="293.31823"
+       fx="5.8162442"
+       fy="293.31823"
+       r="1.8850191"
+       gradientTransform="matrix(1,0,0,0.96314489,0,10.810276)"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3447"
+       x="-0.02552641"
+       width="1.0510528"
+       y="-0.28090444"
+       height="1.5618089">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.087284102"
+         id="feGaussianBlur3449" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.3996324"
+     inkscape:cx="77.152661"
+     inkscape:cy="60.27735"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <rect
+       style="opacity:0.478;fill:#29bfec;fill-opacity:0.34913797;stroke:#020001;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.26458332, 1.05833327;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3255"
+       width="4.4575944"
+       height="4.2649822"
+       x="3.8188951"
+       y="7.3905802" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-284.3)">
+    <path
+       style="fill:none;fill-opacity:0.34913797;stroke:#020001;stroke-width:0.5291667;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4396552"
+       d="m 1.908506,285.23667 c 0.335424,0.32993 4.1524274,2.32129 8.445642,0.0823"
+       id="path1366"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#020001;stroke-width:0.20809565;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.49714784, 0.20809565;stroke-dashoffset:0;stroke-opacity:0.18534486;filter:url(#filter3447)"
+       d="M 10.354148,285.31897 C 10.032592,285.10912 6.3498173,283.82759 2.1476731,285.197"
+       id="path1366-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:type="star"
+       style="opacity:0.478;fill:#2be2ec;fill-opacity:0.76724135;stroke:url(#radialGradient3253);stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1385"
+       sodipodi:sides="5"
+       sodipodi:cx="5.833395"
+       sodipodi:cy="293.47791"
+       sodipodi:r1="1.8437783"
+       sodipodi:r2="0.92188913"
+       sodipodi:arg1="0.91237095"
+       sodipodi:arg2="1.5406895"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 6.9615516,294.93625 -1.1004056,-0.53687 -1.0661035,0.60212 0.1705567,-1.21245 -0.9020979,-0.82786 1.2058154,-0.21246 0.5085763,-1.11377 0.5746783,1.08115 1.2164153,0.13951 -0.8506447,0.88064 z"
+       inkscape:transform-center-x="0.01224041"
+       inkscape:transform-center-y="-0.16437206"
+       transform="rotate(144.4937,5.891145,293.72392)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 7.3767709,287.00529 c 0.082548,4.09989 0.055032,4.12741 0.055032,4.12741 l -0.6053524,-0.96306 v 0"
+       id="path3451-5"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 7.869578,291.08406 c -0.08255,-4.09989 -0.05503,-4.12741 -0.05503,-4.12741 l 0.605352,0.96306 v 0"
+       id="path3451-6-3"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.11666656px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="8.5609751"
+       y="289.9761"
+       id="text3503"><tspan
+         sodipodi:role="line"
+         id="tspan3501"
+         x="8.5609751"
+         y="289.9761"
+         style="font-size:2.11666656px;stroke-width:0.26458332">СМ</tspan></text>
+  </g>
+</svg>

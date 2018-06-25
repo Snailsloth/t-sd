@@ -69,21 +69,47 @@
                     
                     <ul class="uk-switcher uk-margin">
                         <li class="uk-flex uk-flex-center uk-padding uk-position-relative">
-                            <div class="uk-form-horizontal form-on-canvas form-on-canvas-top">
-                                    <div class="uk-margin">
-                                            <label class="uk-form-label" for="form-horizontal-text">Text</label>
-                                            <div class="uk-form-controls">
-                                                <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
-                                            </div>
-                                    </div>
+                            <div class="canvas-wrapper">
+
+                                <div class="canvas-input canvas-input--top">
+                                    <span class="canvas-input_text">Высота от воротника</span>
+                                    <input class="uk-input" type="number">
+                                </div>
+                                <div class="canvas-absolute-holder uk-position-center-left">
+                                        <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="482" height="425"></canvas> 
+                                </div>
+                                    <div class="canvas-input canvas-input--right"><span class="canvas-input_text">Высота принта</span><input class="uk-input" type="number"></div>
+
+                                <div class="canvas-input canvas-input--bottom">
+                                    <span class="canvas-input_text">Ширина принта</span>
+                                    <input class="uk-input" type="number">
+                                </div>
+
                             </div>
                                 
 
-                                <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="490" height="520"></canvas>
+                                
                             
                         </li>
-                        <li class="uk-flex uk-flex-center uk-padding">
-                            <canvas class="toggle" id="canvasBack" width="490" height="520" ></canvas>
+                        <li class="uk-flex uk-flex-center uk-padding uk-position-relative">
+                                <div class="canvas-wrapper">
+
+                                        <div class="canvas-input canvas-input--top">
+                                            <span class="canvas-input_text">Высота от воротника</span>
+                                            <input class="uk-input" type="number">
+                                        </div>
+                                        <div class="canvas-absolute-holder uk-position-center-left">
+                                                <canvas class="toggle" id="canvasBack" width="482" height="425"></canvas> 
+                                        </div>
+                                            <div class="canvas-input canvas-input--right"><span class="canvas-input_text">Высота принта</span><input class="uk-input" type="number"></div>
+        
+                                        <div class="canvas-input canvas-input--bottom">
+                                            <span class="canvas-input_text">Ширина принта</span>
+                                            <input class="uk-input" type="number">
+                                        </div>
+        
+                                    </div>
+                            <!-- <canvas class="toggle" id="canvasBack" width="482" height="425" ></canvas> -->
                         </li>
                     </ul>
                     <div>
@@ -105,7 +131,7 @@
 
                 <div class="uk-width-1-1 uk-width-expand@m ">
                     <div class="border uk-padding-small">
-                        <form>
+                        <form id="customFabric">
                             <fieldset class="uk-fieldset">
                         
                                 <legend class="uk-legend">Заполни!</legend>
@@ -134,7 +160,6 @@
                                                     <option value="white">white</option>
                                                     <option value="green">green</option>
                                                     <option value="navy" selected="selected">navy</option>
-                                                    <option value="purple">purple</option>
                                                     <option value="red">red</option>
                                                     <option value="royal">royal</option>
                                             </select>
@@ -167,24 +192,7 @@
                                             <label><input class="uk-radio" type="radio" name="radio2">Белым мелом</label>
                                         </div>
                                 </div>
-                                <div class="uk-margin">
-                                        <label class="uk-form-label" for="h1-cm">Высота от ворота(см)</label>
-                                        <div class="uk-form-controls">
-                                            <input id="h1-cm" class="uk-input" type="number" placeholder="10" value="10">
-                                        </div>                                                
-                                </div>
-                                <div class="uk-margin">
-                                        <label class="uk-form-label" for="h2-cm">Высота принта(см)</label>
-                                        <div class="uk-form-controls">
-                                            <input id="h2-cm" class="uk-input" type="number" placeholder="40" value="10">
-                                        </div>                                                
-                                </div>
-                                <div class="uk-margin">
-                                        <label class="uk-form-label" for="h3-cm">Ширина принта(см)</label>
-                                        <div class="uk-form-controls">
-                                            <input id="h3-cm" class="uk-input" type="number" placeholder="50" value="10">
-                                        </div>                                                
-                                </div>
+                                
                                 <div class="uk-margin-large-top uk-flex uk-flex-center uk-flex-middle">
                                         <button class="uk-button uk-button-danger" type="button" onclick="getPreviews()"> Открыть превьюшки в новом окне</button>
                                 </div>
@@ -199,3 +207,23 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
+
+<!-- <div class="uk-margin">
+        <label class="uk-form-label" for="h1-cm">Высота от ворота(см)</label>
+        <div class="uk-form-controls">
+            <input id="h1-cm" class="uk-input" type="number" placeholder="10" value="10">
+        </div>                                                
+</div>
+<div class="uk-margin">
+        <label class="uk-form-label" for="h2-cm">Высота принта(см)</label>
+        <div class="uk-form-controls">
+            <input id="h2-cm" class="uk-input" type="number" placeholder="40" value="10">
+        </div>                                                
+</div>
+<div class="uk-margin">
+        <label class="uk-form-label" for="h3-cm">Ширина принта(см)</label>
+        <div class="uk-form-controls">
+            <input id="h3-cm" class="uk-input" type="number" placeholder="50" value="10">
+        </div>                                                
+</div> -->

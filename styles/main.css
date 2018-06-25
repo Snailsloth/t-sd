@@ -12,8 +12,57 @@ html {
 	overflow: visible;
 }
 
-.canvas-wrapper,#c{
-	min-width:480px;
+.canvas-wrapper{
+	width: 600px;
+	height: 600px;
+	position: relative;
+}
+
+.canvas-input{
+	position: absolute;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 12px;
+	box-sizing: border-box;
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.canvas-input input{
+	width:80px;
+}
+
+.canvas-input--top{
+	width: 220px;
+	top: 0;
+	left: 30%;
+	transform: translateX(-30%);
+	padding-left: 40px;
+	background-image: url(../assets/icons/canvastopinput.svg);
+
+}
+
+.canvas-input--right{
+	width: 150px;
+	right:0;
+	top: 50%;
+	transform: translateY(-50%);
+	padding-left: 40px;
+	background-image: url(../assets/icons/canvasrightinput.svg);
+
+}
+
+.canvas-input--bottom{
+	width: 150px;
+	bottom: 0;
+	left: 30%;
+	transform: translateX(-30%);
+	padding-left: 40px;
+	background-image: url(../assets/icons/canvasbottominput.svg);
+
 }
 
 .canvas-wrapper canvas{
@@ -72,14 +121,3 @@ html {
 	box-shadow: 3px 3px 3px -2px rgb(112, 111, 111);
 }
 
-
-.form-on-canvas{
-	position: absolute;
-
-}
-.form-on-canvas-top{
-	top:-10px;
-	left: 50%;
-	transform: translateX(-50%);
-	width:65px;
-}

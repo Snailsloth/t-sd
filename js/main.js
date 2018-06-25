@@ -1,3 +1,8 @@
+//reset forms
+function resetForms() {
+    document.getElementById('customFabric').reset();
+}
+resetForms();
 //default white t-shirt on page load
 var canvasBG_color_url = 'assets/img/navy';
 // link building when swapping  whirt colors
