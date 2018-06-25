@@ -6,21 +6,22 @@ resetForms();
 
 //------object for data we gonna showin modal and send to server------//
 var tshirtVault = {
-	"h-fr-the-collar_Front":0,
-	"img-h_Front":0,
-	"img-w_Front":0,
+	"h-fr-the-collar_Front":10,
+	"img-h_Front":70,
+	"img-w_Front":50,
 	"h-fr-the-collar_Back":0,
 	"img-h_Back":0,
 	"img-w_Back":0,
-	"clientName":"",
-	"clientMail":"",
-	"clientSize":"",
-	"clientColor":"",
-	"clientQuantity":"",
+	"clientName":0,
+	"clientMail":0,
+	"clientSize":0,
+	"clientColor":"navy",
+	"clientQuantity":10,
 	"clientNotes":"",
-	"clientMaterial":"",
-	"canvasFrontPreview": "",
-	"canvasBackPreview": "",
+	"clientMaterial":"Фланель",
+	"canvasFrontPreview": 0,
+	"canvasBackPreview": 0,
+	"paintMaterial":"Белым мелом"
 };
 
 $("#h-fr-the-collar_Front").bind("keyup change", function() {
@@ -43,6 +44,31 @@ $("#img-w_Back").bind("keyup change", function() {
     tshirtVault["img-w_Back"] = $('#img-w_Back').val();
 });
 
+
+$("#clientName").bind("keyup change", function() {
+    tshirtVault["clientName"] = $('#clientName').val();
+});
+$("#clientMail").bind("keyup change", function() {
+    tshirtVault["clientMail"] = $('#clientMail').val();
+});
+$("#clientSize").bind("keyup change", function() {
+    tshirtVault["clientSize"] = $('#clientSize').val();
+});
+$("#clientColor").bind("keyup change", function() {
+    tshirtVault["clientColor"] = $('#clientColor').val();
+});
+$("#clientQuantity").bind("keyup change", function() {
+    tshirtVault["clientQuantity"] = $('#clientQuantity').val();
+});
+$("#clientNotes").bind("keyup change", function() {
+    tshirtVault["clientNotes"] = $('#clientNotes').val();
+});
+$("#clientMaterial").bind("keyup change click", function() {
+    tshirtVault["clientMaterial"] =  $('input[name="clientMaterial"]:checked').val();
+});
+$("#paintMaterial").bind("keyup change click", function() {
+    tshirtVault["paintMaterial"] =  $('input[name="paintMaterial"]:checked').val();
+});
 //-------------------------------------------------------------------//
 
 
@@ -333,3 +359,54 @@ $(function () {
         }, 2000);
     });
 });
+
+
+
+//check if name,male and arts was not added
+function checkImportantData(){
+	if (tshirtVault.clientName == 0){
+		alert('Поле "Имя" не заполнено')
+		return false;
+	} else if(tshirtVault.clientMail == 0){
+		alert('Вы почту забыли оставить')
+		return false;
+	}
+	//  else if (tshirtVault.canvasFrontPreview == 0 || tshirtVault.canvasBackPreview == 0){
+	// 	alert('На футболках нет ничего')
+	// 	return false;
+	// }
+	else {
+		return true;
+	}
+}
+
+var finalModal = UIkit.modal('#orderSummation');
+
+function compileModal(){
+	$( '#clientNameCompiled' ).text( tshirtVault.clientName );
+	$( '#clientMailCompiled' ).text( tshirtVault.clientMail );
+	$( '#clientSizeCompiled' ).text( tshirtVault.clientSize );
+	$( '#clientColorCompiled' ).text( tshirtVault.clientColor );
+	$( '#clientQuantityCompiled' ).text( tshirtVault.clientQuantity);
+	$( '#clientNotesCompiled' ).text( tshirtVault.clientNotes );
+	$( '#clientMaterialCompiled' ).text( tshirtVault.clientMaterial );
+	$( '#paintMaterialCompiled' ).text( tshirtVault.paintMaterialCompiled );
+	$( '#h-fr-the-collar_FrontCompiled' ).text( tshirtVault["h-fr-the-collar_Front"] );
+	$( '#img-w_FrontCompiled' ).text( tshirtVault["img-w_Front"] );
+	$( '#img-h_FrontCompiled' ).text( tshirtVault["img-h_Front"] );
+	tshirtVault.canvasFrontPreview = canvasFront.toDataURL('png');
+	tshirtVault.canvasBackPreview = canvasBack.toDataURL('png');
+	$("#canvasFrontPreviewCompiled").attr("src",tshirtVault.canvasFrontPreview);
+	$("#canvasBackPreviewCompiled").attr("src",tshirtVault.canvasBackPreview);
+};
+
+
+
+function orderSummationStart(){
+	if(checkImportantData()){
+		alert("Открываем!");
+		compileModal();
+		UIkit.modal('#orderSummation').show();
+	}
+}
+

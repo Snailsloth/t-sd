@@ -73,16 +73,16 @@
 
                                 <div class="canvas-input canvas-input--top">
                                     <span class="canvas-input_text">Высота от воротника</span>
-                                    <input class="uk-input" type="number" id="h-fr-the-collar_Front">
+                                    <input class="uk-input" type="number" id="h-fr-the-collar_Front" value="10">
                                 </div>
                                 <div class="canvas-absolute-holder uk-position-center-left">
                                         <canvas class="toggle displayCanvas activeCanvas" id="canvasFront" width="482" height="425"></canvas> 
                                 </div>
-                                    <div class="canvas-input canvas-input--right"><span class="canvas-input_text">Высота принта</span><input class="uk-input" type="number" id="img-h_Front"></div>
+                                    <div class="canvas-input canvas-input--right"><span class="canvas-input_text">Высота принта</span><input class="uk-input" type="number" id="img-h_Front" value="70"></div>
 
                                 <div class="canvas-input canvas-input--bottom">
                                     <span class="canvas-input_text">Ширина принта</span>
-                                    <input class="uk-input" type="number" id="img-w_Front">
+                                    <input class="uk-input" type="number" id="img-w_Front" value="50">
                                 </div>
 
                             </div>
@@ -137,16 +137,16 @@
                                 <legend class="uk-legend">Заполни!</legend>
                         
                                 <div class="uk-margin">
-                                    <input class="uk-input" type="text" placeholder="Как зовут?">
+                                    <input class="uk-input" type="text" id="clientName" placeholder="Как зовут?">
                                 </div>
                                 <div class="uk-margin">
-                                    <input class="uk-input" type="email" placeholder="Почта?">
+                                    <input class="uk-input" type="email" id="clientMail" placeholder="Почта?">
                                 </div>
                         
                                 <div class="uk-margin">
-                                    <label class="uk-form-label" for="shirt-size">Размер (анонимно!) </label>
+                                    <label class="uk-form-label" for="clientSize">Размер (анонимно!) </label>
                                     <div class="uk-form-controls">
-                                        <select class="uk-select" id="shirt-size">
+                                        <select class="uk-select" id="clientSize">
                                             <option>XXXXXL</option>
                                             <option>LLLLLX</option>
                                         </select>
@@ -154,9 +154,9 @@
                                 </div>
 
                                 <div class="uk-margin">
-                                        <label class="uk-form-label" for="shirt-color">Цвет настроения</label>
+                                        <label class="uk-form-label" for="clientColor">Цвет настроения</label>
                                         <div class="uk-form-controls">
-                                            <select class="uk-select" id="shirt-color" onchange="colorChange(this.value)">
+                                            <select class="uk-select" id="clientColor" onchange="colorChange(this.value)">
                                                     <option value="white">white</option>
                                                     <option value="green">green</option>
                                                     <option value="navy" selected="selected">navy</option>
@@ -167,44 +167,99 @@
                                 </div>
 
                                 <div class="uk-margin">
-                                        <label class="uk-form-label" for="quantity">Количество</label>
+                                        <label class="uk-form-label" for="clientQuantity">Количество</label>
                                         <div class="uk-form-controls">
-                                            <input id="quantity" class="uk-input" type="number" placeholder="10" value="10">
+                                            <input id="clientQuantity" class="uk-input" type="number" placeholder="10" value="10">
                                         </div>                                                
                                 </div>
                         
                                 <div class="uk-margin">
-                                    <textarea class="uk-textarea" rows="5" placeholder="Что ещё мы должны знать?"></textarea>
+                                    <textarea class="uk-textarea" rows="5" id="clientNotes" placeholder="Что ещё мы должны знать?"></textarea>
                                 </div>
                                 
                                 <div class="uk-margin">
-                                        <label class="uk-form-label" for="shirt-material">Материал:</label>
-                                        <div class="uk-grid-small uk-child-width-auto uk-grid" id="shirt-material">
-                                            <label><input class="uk-radio" type="radio" name="radio1" checked>Фланель</label>
-                                            <label><input class="uk-radio" type="radio" name="radio1">Мне повезет!</label>
+                                        <label class="uk-form-label" for="clientMaterial">Материал:</label>
+                                        <div class="uk-grid-small uk-child-width-auto uk-grid" id="clientMaterial">
+                                            <label><input class="uk-radio" type="radio" name="clientMaterial" value="Фланель" checked>Фланель</label>
+                                            <label><input class="uk-radio" type="radio" name="clientMaterial" value="Мне повезет!">Мне повезет!</label>
                                         </div>
                                 </div>
                         
                                 <div class="uk-margin">
-                                        <label class="uk-form-label" for="paint-material">Чем рисуем:</label>
-                                        <div class="uk-grid-small uk-child-width-auto uk-grid" id="paint-material">
-                                            <label><input class="uk-radio" type="radio" name="radio2" checked>Шелкография</label>
-                                            <label><input class="uk-radio" type="radio" name="radio2">Белым мелом</label>
+                                        <label class="uk-form-label" for="paintMaterial">Чем рисуем:</label>
+                                        <div class="uk-grid-small uk-child-width-auto uk-grid" id="paintMaterial">
+                                            <label><input class="uk-radio" type="radio" name="paintMaterial" value="Шелкография" checked>Шелкография</label>
+                                            <label><input class="uk-radio" type="radio" name="paintMaterial" value="Белым мелом">Белым мелом</label>
                                         </div>
                                 </div>
                                 
                                 <div class="uk-margin-large-top uk-flex uk-flex-center uk-flex-middle">
-                                        <button class="uk-button uk-button-danger" type="button" onclick="getPreviews()"> Открыть превьюшки в новом окне</button>
+                                        <a class="uk-button uk-button-default" type="button" onclick="orderSummationStart()" >Просмотр и подтверждение</a>
                                 </div>
 
                             </fieldset>
                         </form>
-                    </div> 
+                    </div>
                 </div>
         </div>
     </div>
 
     <script src="js/main.js"></script>
+    <div id="orderSummation" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <div uk-height-viewport> 
+                        <div class="uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+                            <img id="canvasFrontPreviewCompiled" src="" alt="">
+                            <img id="canvasBackPreviewCompiled" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="uk-padding-large">
+                        <h1>Подтверждение заказа</h1>
+                        <ul class="uk-list uk-list-bullet">
+                                <li>
+                                    <span>Имя: </span>
+                                    <b id="clientNameCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Почта: </span>
+                                    <b id="clientMailCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Размер: </span>
+                                    <b id="clientSizeCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Цвет: </span>
+                                    <b id="clientColorCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Количество: </span>
+                                    <b id="clientQuantityCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Заметки: </span>
+                                    <b id="clientNotesCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Материал: </span>
+                                    <b id="clientMaterialCompiled"></b>
+                                </li>
+                                <li>
+                                    <span>Способ нанесения: </span>
+                                    <b id="paintMaterialCompiled"></b>
+                                </li>
+                        </ul>
+                        <h3>Отступы:</h3>
+                        <h5>Передняя сторона:</h5>
+                        <p>Расстояние от ворота - <span id="h-fr-the-collar_FrontCompiled"></span> см.</p>
+                        <p>Ширина принта - <span id="img-w_FrontCompiled"></span> см.</p>
+                        <p>Высота принта - <span id="img-h_FrontCompiled"></span> см.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
 
