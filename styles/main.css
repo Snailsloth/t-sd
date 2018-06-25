@@ -98,8 +98,8 @@ html {
 
 
 .uk-tab > .uk-active > a {
-    color: rgb(250, 55, 165);
-    border-color: rgba(136, 185, 204, 0.459);
+	color: rgb(250, 55, 165);
+	border-color: rgba(136, 185, 204, 0.459);
 }
 
 .art-preview{
@@ -121,3 +121,12 @@ html {
 	box-shadow: 3px 3px 3px -2px rgb(112, 111, 111);
 }
 
+.blink_me {
+	animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}

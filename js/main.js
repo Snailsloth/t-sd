@@ -3,7 +3,7 @@ function resetForms() {
     document.getElementById('customFabric').reset();
 }
 resetForms();
-//default white t-shirt on page load
+//default t-shirt link on page load
 var canvasBG_color_url = 'assets/img/navy';
 // link building when swapping  whirt colors
 var canvasBG_front_url = canvasBG_color_url + '/_front.png';
@@ -11,14 +11,26 @@ var canvasBG_back_url = canvasBG_color_url + '/_back.png';
 var activeCanvas = $('.activeCanvas').attr('id');
 
 //toggle front-back shirt image
-$( ".flip-switcher" ).click(function() {
-	// $( ".toggle" ).toggle("teetttett");
-	$(".toggle").toggleClass("displayCanvas activeCanvas");
-	//activeCanvas variable, for find canvas we need when adding objects
-	activeCanvas = $('.activeCanvas').attr('id');
-	//remove delete object button
-	$(".deleteBtn").remove();
+$( ".flip-switcher--front" ).click(function() {
+
+	$(".toggle").toggleClass("activeCanvas");
+		//activeCanvas variable, for find canvas we need when adding objects
+		activeCanvas = "canvasFront";
+		//remove delete object button
+		$(".deleteBtn").remove();
+	
 });
+
+$( ".flip-switcher--back" ).click(function() {
+
+	$(".toggle").toggleClass("activeCanvas");
+		//activeCanvas variable, for find canvas we need when adding objects
+		activeCanvas = "canvasBack";
+		//remove delete object button
+		$(".deleteBtn").remove();
+	
+});
+
 
 //tshirt front
 var canvasFront =  new fabric.Canvas('canvasFront', {
@@ -255,3 +267,16 @@ function getPreviews(){
 // };
 
 // showArtPreviews();
+
+
+
+
+//blink text animation
+$(function () {
+    $('div.highlightable').click(function () {
+        $(this).addClass('highlighted');
+        setTimeout(function () {
+            $('div.highlightable').removeClass('highlighted');
+        }, 2000);
+    });
+});
