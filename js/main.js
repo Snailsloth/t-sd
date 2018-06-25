@@ -3,6 +3,57 @@ function resetForms() {
     document.getElementById('customFabric').reset();
 }
 resetForms();
+
+//------object for data we gonna showin modal and send to server------//
+var tshirtVault = {
+	"h-fr-the-collar_Front":0,
+	"img-h_Front":0,
+	"img-w_Front":0,
+	"h-fr-the-collar_Back":0,
+	"img-h_Back":0,
+	"img-w_Back":0,
+	"clientName":"",
+	"clientMail":"",
+	"clientSize":"",
+	"clientColor":"",
+	"clientQuantity":"",
+	"clientNotes":"",
+	"clientMaterial":"",
+	"canvasFrontPreview": "",
+	"canvasBackPreview": "",
+};
+
+$("#h-fr-the-collar_Front").bind("keyup change", function() {
+    tshirtVault["h-fr-the-collar_Front"] = $('#h-fr-the-collar_Front').val();
+});
+$("#img-h_Front").bind("keyup change", function() {
+    tshirtVault["img-h_Front"] = $('#img-h_Front').val();
+});
+$("#img-w_Front").bind("keyup change", function() {
+    tshirtVault["img-w_Front"] = $('#img-w_Front').val();
+});
+
+$("#h-fr-the-collar_Back").bind("keyup change", function() {
+    tshirtVault["h-fr-the-collar_Back"] = $('#h-fr-the-collar_Back').val();
+});
+$("#img-h_Back").bind("keyup change", function() {
+    tshirtVault["img-h_Back"] = $('#img-h_Back').val();
+});
+$("#img-w_Back").bind("keyup change", function() {
+    tshirtVault["img-w_Back"] = $('#img-w_Back').val();
+});
+
+//-------------------------------------------------------------------//
+
+
+
+
+
+
+
+
+
+
 //default t-shirt link on page load
 var canvasBG_color_url = 'assets/img/navy';
 // link building when swapping  whirt colors
@@ -34,7 +85,6 @@ $( ".flip-switcher--back" ).click(function() {
 
 //tshirt front
 var canvasFront =  new fabric.Canvas('canvasFront', {
-	padding: 200
 });
 //tshirt back
 var canvasBack =  new fabric.Canvas('canvasBack', {
@@ -76,23 +126,26 @@ function refreshShirtColor(){
 
 //-------------------------------adding Objects-------------------------------//
 //-----------------Arts-----------------//
+var printArtFront = [];
 function addArt(src){
 	if (activeCanvas == 'canvasFront'){
-
-		fabric.Image.fromURL(src, function(img) {
-			img.scale(1).set({
+		$(".deleteBtn").remove();
+		canvasFront.remove(canvasFront._objects[0]);
+		fabric.Image.fromURL(src, function(printArtFront) {
+			printArtFront.scale(1).set({
 				left: 100,
 				top: 100,
 			});
-			img.scaleToWidth(canvasFront.getWidth()/2);
-			canvasFront.add(img).setActiveObject(img);
+			printArtFront.scaleToWidth(canvasFront.getWidth()/2);
+			canvasFront.add(printArtFront).setActiveObject(printArtFront);
 		});
 
 
 
 	} else {
 
-
+		$(".deleteBtn").remove();
+		canvasBack.remove(canvasFront._objects[0]);
 		fabric.Image.fromURL(src, function(img) {
 			img.scale(1).set({
 				left: 100,
